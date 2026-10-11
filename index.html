@@ -72,6 +72,7 @@
             border: 1px solid rgba(6, 182, 212, 0.35);
             font-size: 12px;
         }
+        #products { scroll-margin-top: 6.5rem; }
         #dev-stats-panel.is-open { display: block; }
         #dev-stats-panel .stat-num {
             font-size: 22px;
@@ -179,7 +180,7 @@
                             </div>
                             <!-- Showcase Carousel Banner -->
                             <div id="heroShowcase" class="relative overflow-hidden rounded-lg bg-slate-800/80 p-4 border border-slate-700/60 min-h-[220px] flex flex-col justify-center items-center text-center">
-                                <img id="heroImage" src="" alt="Apparatus Preview" class="h-36 object-contain mb-3 transition-all duration-500">
+                                <img id="heroImage" src="OIP.webp" alt="Soxhlet Extraction Unit" class="h-36 object-contain mb-3 transition-all duration-500">
                                 <h4 id="heroTitle" class="font-bold text-white text-base">Soxhlet Extraction & Distillation Units</h4>
                                 <p id="heroSubtitle" class="text-xs text-slate-400 mt-1">For Edible Oil, Fat Determination & Solvent Recovery</p>
                             </div>
@@ -251,9 +252,9 @@
                         <li class="flex items-center gap-2.5"><i class="fa-solid fa-circle-check text-emerald-500"></i> Digital Titrators & Bottle Top Dispensers</li>
                         <li class="flex items-center gap-2.5"><i class="fa-solid fa-circle-check text-emerald-500"></i> Food Grade Testing Chemicals (Daejung, Merck)</li>
                     </ul>
-                    <button onclick="filterProducts('edible')" class="text-amber-700 font-semibold text-sm hover:underline inline-flex items-center gap-2">
+                    <a href="#products" onclick="filterProducts('edible')" class="text-amber-700 font-semibold text-sm hover:underline inline-flex items-center gap-2">
                         View Edible Industry Equipment <i class="fa-solid fa-arrow-right"></i>
-                    </button>
+                    </a>
                 </div>
 
                 <!-- Solvent Industry -->
@@ -271,9 +272,9 @@
                         <li class="flex items-center gap-2.5"><i class="fa-solid fa-circle-check text-emerald-500"></i> Aczet Analytical Balances & Draft Shields</li>
                         <li class="flex items-center gap-2.5"><i class="fa-solid fa-circle-check text-emerald-500"></i> MRC Desktop Centrifuges & Heating Mantles</li>
                     </ul>
-                    <button onclick="filterProducts('solvent')" class="text-sky-700 font-semibold text-sm hover:underline inline-flex items-center gap-2">
+                    <a href="#products" onclick="filterProducts('solvent')" class="text-sky-700 font-semibold text-sm hover:underline inline-flex items-center gap-2">
                         View Solvent Industry Supplies <i class="fa-solid fa-arrow-right"></i>
-                    </button>
+                    </a>
                 </div>
             </div>
         </div>
@@ -299,7 +300,7 @@
 
             <!-- Product Grid -->
             <div id="productGrid" class="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-                <!-- Javascript will inject the 10 detailed SVG/Image product items here -->
+                <!-- Product photos are injected from productsData -->
             </div>
         </div>
     </section>
@@ -531,7 +532,6 @@
     </div>
 
     <script>
-        // High fidelity SVG assets representing the 10 requested laboratory apparatus images
         const productsData = [
             {
                 id: 1,
@@ -540,18 +540,7 @@
                 brand: "EP-PRO / Labsupply",
                 specs: "Rechargeable, digital speed LCD display, ergonomic grip for precise serial dispensing.",
                 badge: "Liquid Handling",
-                svg: `<svg viewBox="0 0 200 200" class="w-full h-44">
-                    <rect width="200" height="200" fill="#f8fafc"/>
-                    <path d="M70,50 L120,40 C140,38 160,50 160,70 C160,85 145,95 130,95 L110,95 L110,150 L90,150 L90,95 L70,95 Z" fill="#ffffff" stroke="#334155" stroke-width="4"/>
-                    <rect x="130" y="55" width="22" height="14" rx="3" fill="#0f172a"/>
-                    <text x="134" y="66" fill="#06b6d4" font-size="9" font-family="monospace">6.0</text>
-                    <circle cx="140" cy="80" r="4" fill="#3b82f6"/>
-                    <circle cx="150" cy="80" r="4" fill="#3b82f6"/>
-                    <rect x="75" y="105" width="12" height="20" rx="3" fill="#475569"/>
-                    <rect x="75" y="130" width="12" height="20" rx="3" fill="#475569"/>
-                    <rect x="95" y="95" width="6" height="85" fill="#f1f5f9" stroke="#64748b" stroke-width="1.5"/>
-                    <line x1="98" y1="105" x2="98" y2="175" stroke="#d97706" stroke-width="2" stroke-dasharray="2,2"/>
-                </svg>`
+                image: "OIP (8).webp"
             },
             {
                 id: 2,
@@ -560,16 +549,7 @@
                 brand: "Dispensette / Labsupply",
                 specs: "Recirculation valve, digital titration display, fits standard amber chemical bottles for edible oil FFA tests.",
                 badge: "Titration",
-                svg: `<svg viewBox="0 0 200 200" class="w-full h-44">
-                    <rect width="200" height="200" fill="#f8fafc"/>
-                    <path d="M70,110 L130,110 L120,185 L80,185 Z" fill="#78350f" stroke="#451a03" stroke-width="2"/>
-                    <rect x="85" y="95" width="30" height="15" fill="#e2e8f0" stroke="#475569" stroke-width="2"/>
-                    <rect x="92" y="50" width="16" height="45" fill="#ffffff" stroke="#334155" stroke-width="3"/>
-                    <rect x="75" y="30" width="50" height="22" rx="4" fill="#ffffff" stroke="#0284c7" stroke-width="3"/>
-                    <rect x="85" y="35" width="30" height="10" fill="#0f172a"/>
-                    <path d="M80,65 L50,80 L50,110" fill="none" stroke="#e2e8f0" stroke-width="5" stroke-linecap="round"/>
-                    <path d="M50,110 L40,160" fill="none" stroke="#0284c7" stroke-width="2"/>
-                </svg>`
+                image: "OIP (7).webp"
             },
             {
                 id: 3,
@@ -578,15 +558,7 @@
                 brand: "MRC Lab Solutions",
                 specs: "Digital LCD speed control (4710 RPM), transparent dome lid, holds multiple sample tubes.",
                 badge: "Centrifugation",
-                svg: `<svg viewBox="0 0 200 200" class="w-full h-44">
-                    <rect width="200" height="200" fill="#f8fafc"/>
-                    <path d="M40,150 C40,90 160,90 160,150 C160,170 140,180 100,180 C60,180 40,170 40,150 Z" fill="#ffffff" stroke="#334155" stroke-width="4"/>
-                    <path d="M45,115 C45,65 155,65 155,115 Z" fill="#0284c7" fill-opacity="0.2" stroke="#0284c7" stroke-width="3"/>
-                    <rect x="75" y="135" width="50" height="25" rx="5" fill="#e2e8f0" stroke="#64748b" stroke-width="1"/>
-                    <text x="83" y="152" fill="#0f172a" font-size="10" font-weight="bold" font-family="monospace">4710 RPM</text>
-                    <circle cx="100" cy="168" r="5" fill="#cbd5e1" stroke="#475569"/>
-                    <line x1="85" y1="100" x2="115" y2="100" stroke="#ef4444" stroke-width="6" stroke-linecap="round"/>
-                </svg>`
+                image: "download.webp"
             },
             {
                 id: 4,
@@ -595,15 +567,7 @@
                 brand: "Aczet",
                 specs: "Glass draft shield enclosure, high resolution strain gauge, digital blue backlit LCD.",
                 badge: "Analytical Weight",
-                svg: `<svg viewBox="0 0 200 200" class="w-full h-44">
-                    <rect width="200" height="200" fill="#f8fafc"/>
-                    <rect x="40" y="125" width="120" height="45" rx="6" fill="#f1f5f9" stroke="#334155" stroke-width="3"/>
-                    <rect x="50" y="45" width="100" height="80" fill="#0284c7" fill-opacity="0.08" stroke="#38bdf8" stroke-width="3"/>
-                    <rect x="80" y="105" width="40" height="10" fill="#94a3b8"/>
-                    <rect x="85" y="75" width="30" height="30" fill="#38bdf8" fill-opacity="0.4" stroke="#0284c7"/>
-                    <rect x="80" y="140" width="60" height="16" rx="2" fill="#0f172a"/>
-                    <text x="85" y="152" fill="#38bdf8" font-size="10" font-family="monospace">190.7073 g</text>
-                </svg>`
+                image: "OIP (6).webp"
             },
             {
                 id: 5,
@@ -612,16 +576,7 @@
                 brand: "Memmert",
                 specs: "Stainless steel interior chamber, digital temperature controller up to 220°C for moisture test.",
                 badge: "Moisture Analysis",
-                svg: `<svg viewBox="0 0 200 200" class="w-full h-44">
-                    <rect width="200" height="200" fill="#f8fafc"/>
-                    <rect x="45" y="30" width="110" height="145" rx="6" fill="#ffffff" stroke="#334155" stroke-width="4"/>
-                    <rect x="55" y="40" width="90" height="25" fill="#1e293b"/>
-                    <text x="62" y="56" fill="#ef4444" font-size="10" font-family="monospace">105.0 °C</text>
-                    <rect x="55" y="75" width="80" height="90" fill="#f8fafc" stroke="#94a3b8" stroke-width="2"/>
-                    <line x1="60" y1="105" x2="130" y2="105" stroke="#cbd5e1" stroke-width="3"/>
-                    <line x1="60" y1="135" x2="130" y2="135" stroke="#cbd5e1" stroke-width="3"/>
-                    <rect x="135" y="75" width="10" height="90" fill="#e2e8f0" stroke="#64748b"/>
-                </svg>`
+                image: "OIP (5).webp"
             },
             {
                 id: 6,
@@ -630,15 +585,7 @@
                 brand: "Labsupply Precision",
                 specs: "Digital RPM & Temperature dual display, chemical resistant ceramic top plate.",
                 badge: "Heating & Stirring",
-                svg: `<svg viewBox="0 0 200 200" class="w-full h-44">
-                    <rect width="200" height="200" fill="#f8fafc"/>
-                    <path d="M40,110 L160,110 L150,165 L50,165 Z" fill="#1e293b" stroke="#0f172a" stroke-width="3"/>
-                    <ellipse cx="100" cy="108" rx="55" ry="16" fill="#ffffff" stroke="#64748b" stroke-width="3"/>
-                    <rect x="65" y="125" width="70" height="25" rx="3" fill="#0f172a"/>
-                    <text x="70" y="141" fill="#22c55e" font-size="9" font-family="monospace">1200RPM 240C</text>
-                    <circle cx="58" cy="140" r="6" fill="#cbd5e1"/>
-                    <circle cx="142" cy="140" r="6" fill="#cbd5e1"/>
-                </svg>`
+                image: "OIP (4).webp"
             },
             {
                 id: 7,
@@ -647,15 +594,7 @@
                 brand: "Labconco / Labsupply",
                 specs: "Complete nitrogen & crude protein determination apparatus for edible oil and grain quality.",
                 badge: "Protein Assay",
-                svg: `<svg viewBox="0 0 200 200" class="w-full h-44">
-                    <rect width="200" height="200" fill="#f8fafc"/>
-                    <rect x="40" y="130" width="120" height="40" fill="#e2e8f0" stroke="#334155" stroke-width="3"/>
-                    <rect x="55" y="100" width="40" height="30" rx="4" fill="#cbd5e1"/>
-                    <rect x="105" y="100" width="40" height="30" rx="4" fill="#cbd5e1"/>
-                    <path d="M65,100 Q75,40 85,30 L95,30" fill="none" stroke="#0284c7" stroke-width="3"/>
-                    <path d="M115,100 Q125,40 135,30 L145,30" fill="none" stroke="#0284c7" stroke-width="3"/>
-                    <rect x="80" y="25" width="70" height="12" rx="3" fill="#64748b"/>
-                </svg>`
+                image: "OIP (3).webp"
             },
             {
                 id: 8,
@@ -664,22 +603,7 @@
                 brand: "Labsupply Industrial",
                 specs: "6-position individual heating mantle control with solvent condensers for fat content analysis.",
                 badge: "Fat Extraction",
-                svg: `<svg viewBox="0 0 200 200" class="w-full h-44">
-                    <rect width="200" height="200" fill="#f8fafc"/>
-                    <rect x="25" y="140" width="150" height="35" fill="#0284c7" stroke="#0369a1" stroke-width="3"/>
-                    <!-- 5 Condenser Tubes -->
-                    <line x1="40" y1="40" x2="40" y2="140" stroke="#94a3b8" stroke-width="4"/>
-                    <line x1="65" y1="40" x2="65" y2="140" stroke="#94a3b8" stroke-width="4"/>
-                    <line x1="90" y1="40" x2="90" y2="140" stroke="#94a3b8" stroke-width="4"/>
-                    <line x1="115" y1="40" x2="115" y2="140" stroke="#94a3b8" stroke-width="4"/>
-                    <line x1="140" y1="40" x2="140" y2="140" stroke="#94a3b8" stroke-width="4"/>
-                    <line x1="160" y1="40" x2="160" y2="140" stroke="#94a3b8" stroke-width="4"/>
-                    <line x1="30" y1="50" x2="170" y2="50" stroke="#38bdf8" stroke-width="3"/>
-                    <circle cx="40" cy="158" r="3" fill="#ffffff"/>
-                    <circle cx="65" cy="158" r="3" fill="#ffffff"/>
-                    <circle cx="90" cy="158" r="3" fill="#ffffff"/>
-                    <circle cx="115" cy="158" r="3" fill="#ffffff"/>
-                </svg>`
+                image: "OIP.webp"
             },
             {
                 id: 9,
@@ -688,13 +612,7 @@
                 brand: "Daejung / Borosil",
                 specs: "Borosilicate 3.3 glass condenser, joint adapter, flask mantle for solvent purification.",
                 badge: "Distillation",
-                svg: `<svg viewBox="0 0 200 200" class="w-full h-44">
-                    <rect width="200" height="200" fill="#f8fafc"/>
-                    <circle cx="80" cy="145" r="25" fill="#38bdf8" fill-opacity="0.3" stroke="#0284c7" stroke-width="3"/>
-                    <rect x="75" y="80" width="10" height="42" fill="#ffffff" stroke="#0284c7" stroke-width="2"/>
-                    <rect x="70" y="30" width="20" height="50" rx="3" fill="#38bdf8" fill-opacity="0.2" stroke="#0284c7" stroke-width="2"/>
-                    <path d="M85,50 L140,110 L140,150" fill="none" stroke="#0284c7" stroke-width="3"/>
-                </svg>`
+                image: "OIP (1).webp"
             },
             {
                 id: 10,
@@ -703,16 +621,7 @@
                 brand: "Labsupply Edible Tech",
                 specs: "Integrated multi-tube solvent extraction rack for heavy-duty food quality assurance laboratories.",
                 badge: "Digestion Rack",
-                svg: `<svg viewBox="0 0 200 200" class="w-full h-44">
-                    <rect width="200" height="200" fill="#f8fafc"/>
-                    <rect x="30" y="130" width="140" height="40" fill="#0f172a" stroke="#334155" stroke-width="3"/>
-                    <line x1="30" y1="80" x2="170" y2="80" stroke="#0284c7" stroke-width="4"/>
-                    <!-- Glassware rows -->
-                    <rect x="45" y="50" width="12" height="80" fill="#38bdf8" fill-opacity="0.2" stroke="#0284c7" stroke-width="2"/>
-                    <rect x="75" y="50" width="12" height="80" fill="#38bdf8" fill-opacity="0.2" stroke="#0284c7" stroke-width="2"/>
-                    <rect x="105" y="50" width="12" height="80" fill="#38bdf8" fill-opacity="0.2" stroke="#0284c7" stroke-width="2"/>
-                    <rect x="135" y="50" width="12" height="80" fill="#38bdf8" fill-opacity="0.2" stroke="#0284c7" stroke-width="2"/>
-                </svg>`
+                image: "OIP (2).webp"
             }
         ];
 
@@ -727,7 +636,7 @@
                     <div>
                         <div class="relative p-4 bg-slate-50 group-hover:bg-sky-50/50 transition-colors border-b border-slate-100">
                             <span class="absolute top-3 right-3 text-[10px] font-bold px-2 py-0.5 rounded-full bg-sky-100 text-sky-700 uppercase">${item.badge}</span>
-                            ${item.svg}
+                            <img src="${encodeURI(item.image)}" alt="${item.name}" class="w-full h-44 object-contain">
                         </div>
                         <div class="p-5">
                             <span class="text-[11px] font-bold text-sky-600 uppercase tracking-wider">${item.brand}</span>
@@ -765,6 +674,11 @@
             } else {
                 renderProducts(productsData.filter(p => p.category === category));
             }
+
+            const productsSection = document.getElementById('products');
+            if (productsSection) {
+                productsSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
         }
 
         // Hero Carousel feature rotation
@@ -776,7 +690,8 @@
             
             const item = productsData[currentHeroIdx];
             if (heroImg && item) {
-                heroImg.outerHTML = item.svg.replace('h-44', 'h-36 id="heroImage"');
+                heroImg.src = encodeURI(item.image);
+                heroImg.alt = item.name;
                 heroTitle.textContent = item.name;
                 heroSub.textContent = `${item.brand} • ${item.specs}`;
             }
